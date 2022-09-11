@@ -1,11 +1,12 @@
-import WithCounter from "../Hoc/withCount";
+import WithCounter from "../hoc/withCount";
 
-const ClickCounter = ({ counter, incrementCounter }) => {
+const Clickcounter = ({ count, incrementCount, name }) => {
+  console.log(name);
   return (
     <div>
-      <button onClick={incrementCounter}>{counter}</button>
+      <h2 onClick={incrementCount}>clicked {count} times</h2>
     </div>
   );
 };
 
-export default WithCounter(ClickCounter);
+export default WithCounter(Clickcounter, 5);

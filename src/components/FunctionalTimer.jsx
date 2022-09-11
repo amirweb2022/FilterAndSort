@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
-const FuncionalTimer = () => {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    const myTimer = setInterval(() => {
-      console.log("hi amir");
-      setCount(count + 1);
-    }, 1000);
+// import { useEffect, useState } from "react";
 
-    return () => {
-      clearInterval(myTimer);
-    };
-  });
-  return <div>this is timer</div>;
-};
+// const FunctionalTimer = () => {
+//   const [count, setCount] = useState(0);
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       console.log("hi saheb");
+//       setCount((count) => count + 1);
+//     }, 1000);
 
-export default FuncionalTimer;
+//     return () => {
+//       clearInterval(interval);
+//     };
+//   }, []);
+
+//   return <div>this is timer</div>;
+// };
+
+// export default FunctionalTimer;

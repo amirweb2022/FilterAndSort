@@ -7,12 +7,15 @@ class ClassCounter extends Component {
   componentDidMount() {
     document.title = `clicked : ${this.state.count} times`;
   }
+
   componentDidUpdate(prevProps, prevState) {
+    //   based on count state changes 
     if (prevState.count !== this.state.count) {
-        console.log('document title updating');
-        document.title = `clicked : ${this.state.count} times`;
+      console.log("document title updating");
+      document.title = `clicked : ${this.state.count} times`;
     }
   }
+
   render() {
     return (
       <div>
@@ -21,10 +24,11 @@ class ClassCounter extends Component {
           onChange={(e) => this.setState({ name: e.target.value })}
         />
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-          {this.state.count}
+          count : {this.state.count}
         </button>
       </div>
     );
   }
 }
+
 export default ClassCounter;

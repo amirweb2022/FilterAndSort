@@ -1,14 +1,21 @@
 import { useState } from "react";
-const WithCounter = (wrappedComponent) => {
-  const UpdatedComponent = () => {
-    const [count, setCount] = useState(0);
+
+const WithCounter = (WrappedComponent, incrementValue) => {
+  const UpdatedComponent = (props) => {
+    const [count, setCount] = useState(0);   
     const incrementCount = () => {
-      setCount(count + 1);
+      setCount(count + incrementValue);
     };
+
     return (
-      <wrappedComponent counter={count} incrementCounter={incrementCount} />
+      <WrappedComponent
+        count={count}
+        incrementCount={incrementCount}
+        {...props}
+      />
     );
   };
+
   return UpdatedComponent;
 };
 

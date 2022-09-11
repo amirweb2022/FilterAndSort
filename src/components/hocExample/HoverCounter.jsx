@@ -1,7 +1,11 @@
-import WithCounter from "../Hoc/withCount";
+import WithCounter from "../hoc/withCount";
 
-const HoverCounter = ({ counter, incrementCounter }) => {
-  return <div onMouseOver={incrementCounter}>{counter}</div>;
+const Hovercounter = ({ count, incrementCount }) => {
+  return (
+    <div>
+      <h2 onMouseOver={incrementCount}>hovered {count} times</h2>
+    </div>
+  );
 };
 
-export default WithCounter(HoverCounter);
+export default WithCounter(Hovercounter, 10);
