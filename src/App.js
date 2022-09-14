@@ -1,4 +1,3 @@
-import React, { Component, useState } from "react";
 import ProductList from "./components/ProductList/ProductList";
 import NavBar from "./components/NavBar/NavBar";
 import Wrapper from "./components/hoc/Wrapper";

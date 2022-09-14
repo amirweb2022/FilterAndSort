@@ -18,9 +18,8 @@ const Product = ({ onChange, onDecrement, onIncrement, product, onDelete }) => {
 
       <button
         onClick={onDecrement}
-        className={`${styles.button} ${
-          product.quantity === 1 && styles.remove
-        }`}
+        className={`${styles.button} ${product.quantity === 1 && styles.remove
+          }`}
       >
         {product.quantity > 1 ? "-" : <BiTrash />}
       </button>

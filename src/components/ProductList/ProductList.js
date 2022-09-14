@@ -12,7 +12,7 @@ const ProductList = (props) => {
       return (
         <Product
           product={product}
-          key={index}
+          key={product.id}
           onDelete={() => dispatch({ type: "remove", id: product.id })}
           onIncrement={() => dispatch({ type: "increment", id: product.id })}
           onChange={(e) => dispatch({ type: "edit", id: product.id, event: e })}
@@ -24,7 +24,6 @@ const ProductList = (props) => {
 
   return (
     <div>
-      {!products.length && <div>go to shoppings</div>}
       {renderProduct()}
     </div>
   );

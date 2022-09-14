@@ -6,7 +6,7 @@ const NavBar = () => {
   const totalItems = products.filter((p) => p.quantity > 0).length;
   return (
     <header className={styles.navBar}>
-      <h2>fronthooks.ir shopping</h2>
+      <h2>Online shopping</h2>
       <span>{totalItems}</span>
     </header>
   );

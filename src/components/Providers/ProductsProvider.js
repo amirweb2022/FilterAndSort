@@ -51,26 +51,25 @@ const reducer = (state, action) => {
     case "remove":
       const filteredProducts = state.filter((p) => p.id !== action.id);
       return filteredProducts;
-    case "filter": {
-      // console.log(action.selectedOption.value);
-      const value = action.selectedOption.value;
 
+    case "filter": {
+      const value = action.selectedOPtion.value;
       if (value === "") {
         return productsData;
       } else {
-        const updatedProducts = productsData.filter(
+        const UpdateProducts = productsData.filter(
           (p) => p.availableSizes.indexOf(value) >= 0
-        ); // "L" => ["L","M","XS"]
-        return updatedProducts;
+        );
+        return UpdateProducts;
       }
     }
     case "sort": {
-      const value = action.selectedOption.value;
-      const products = [...state];
+      const value = action.selectedOPtion.value;
+      const products = { ...state };
       if (value === "lowest") {
-        return _.orderBy(products, ["price"], ["asc"]);
+        return _.orderBy(products, "price", "asc");
       } else {
-        return _.orderBy(products, ["price"], ["desc"]);
+        return _.orderBy(products, "price", "desc");
       }
     }
     case "search": {
@@ -78,10 +77,10 @@ const reducer = (state, action) => {
       if (value === "") {
         return state;
       } else {
-        const filteredProducts = state.filter((p) =>
-          p.title.toLowerCase().includes(value.toLowerCase())
+        const SearchProduct = state.filter((p) =>
+          p.title.toLocaleLowerCase().includes(value.toLocaleLowerCase())
         );
-        return filteredProducts;
+        return SearchProduct;
       }
     }
     default:
